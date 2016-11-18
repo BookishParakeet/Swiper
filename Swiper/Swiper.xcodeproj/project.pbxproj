@@ -16,6 +16,7 @@
 		2A5D531B1DD920C6002C0377 /* SwiperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D531A1DD920C6002C0377 /* SwiperUITests.swift */; };
 		2A5D53291DD92473002C0377 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D53281DD92473002C0377 /* SettingController.swift */; };
 		2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */; };
+		2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C36851DDFBF5900D759BD /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2A5D531C1DD920C6002C0377 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A5D53281DD92473002C0377 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDetailsController.swift; sourceTree = "<group>"; };
+		2A8C36851DDFBF5900D759BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				2A5D52FC1DD920C6002C0377 /* MasterController.swift */,
 				2A5D53281DD92473002C0377 /* SettingController.swift */,
 				2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */,
+				2A8C36851DDFBF5900D759BD /* CameraController.swift */,
 				2A5D52FE1DD920C6002C0377 /* Main.storyboard */,
 				2A5D53011DD920C6002C0377 /* Assets.xcassets */,
 				2A5D53031DD920C6002C0377 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 				2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */,
 				2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */,
 				2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */,
+				2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
