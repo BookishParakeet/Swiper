@@ -18,6 +18,7 @@ class MasterController: UIViewController {
         super.viewDidLoad()
         // Set title image
         self.navigationItem.titleView = UIImageView(image:#imageLiteral(resourceName: "BarTitle"))
+        
     }
 
     override func didReceiveMemoryWarning() {
