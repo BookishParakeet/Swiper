@@ -26,6 +26,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var swipeUpImg: UIImageView!
     @IBOutlet var swipeDownImg: UIImageView!
     
+    @IBOutlet var settingsButton: UIButton!
     
 
     override func viewDidLoad() {

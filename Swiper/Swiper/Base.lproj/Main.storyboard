@@ -97,6 +97,14 @@
                                     <action selector="takePhoto:" destination="5WA-cz-If0" eventType="touchUpInside" id="A6z-Rr-eSM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-8h-hSc">
+                                <frame key="frameInset" minX="310" minY="520" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="TipIcon"/>
+                                <connections>
+                                    <segue destination="sGX-o1-4yu" kind="show" id="yVy-VZ-AuF"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-YH-7Dk">
                                 <frame key="frameInset" minX="15" minY="575" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -108,6 +116,7 @@
                         <outlet property="cameraView" destination="CYj-Xf-Pdf" id="o47-yU-pPd"/>
                         <outlet property="imagePicker" destination="UaD-YH-7Dk" id="o0l-uL-D2V"/>
                         <outlet property="pictureImage" destination="ZQ4-JM-wfz" id="r6v-8L-hKj"/>
+                        <outlet property="settingsButton" destination="kLZ-8h-hSc" id="Slg-Kq-oqW"/>
                         <outlet property="swipeDownImg" destination="Q9N-Pf-fMa" id="fGA-O8-otB"/>
                         <outlet property="swipeLeftImg" destination="ccY-hi-uI7" id="5bU-IP-adB"/>
                         <outlet property="swipeRightImg" destination="0It-8c-opy" id="BOq-G9-V08"/>
@@ -734,5 +743,8 @@
         <image name="WeiboIcon" width="256" height="256"/>
         <image name="iMessageIcon" width="113" height="113"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="yVy-VZ-AuF"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.50492869127516782" colorSpace="calibratedRGB"/>
 </document>
