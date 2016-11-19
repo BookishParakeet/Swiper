@@ -58,21 +58,37 @@
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-hi-uI7">
+                                <frame key="frameInset" minX="15" minY="303" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="0It-8c-opy">
+                                <frame key="frameInset" minX="300" minY="303" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UpArrow" translatesAutoresizingMaskIntoConstraints="NO" id="0Ez-VW-5hx">
+                                <frame key="frameInset" minX="158" minY="15" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Down_Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Q9N-Pf-fMa">
+                                <frame key="frameInset" minX="158" minY="520" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CYj-Xf-Pdf">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k2-Df-KCR">
-                                <frame key="frameInset" minX="277" minY="575" width="53" height="50"/>
+                                <frame key="frameInset" minX="300" minY="580" width="53" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="FlipCamera" image="FlipCamera"/>
+                                <state key="normal" title="FlipCamera" image="Camera_Grey"/>
                                 <connections>
                                     <action selector="takeAnotherPhoto:" destination="5WA-cz-If0" eventType="touchUpInside" id="m9k-y5-qwm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vko-Es-gUU">
-                                <frame key="frameInset" minX="152" minY="575" width="70" height="70"/>
+                                <frame key="frameInset" minX="150" minY="575" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="takePic" image="TakePic">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -82,7 +98,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-YH-7Dk">
-                                <frame key="frameInset" minX="32" minY="575" width="60" height="60"/>
+                                <frame key="frameInset" minX="15" minY="575" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -92,6 +108,10 @@
                         <outlet property="cameraView" destination="CYj-Xf-Pdf" id="o47-yU-pPd"/>
                         <outlet property="imagePicker" destination="UaD-YH-7Dk" id="o0l-uL-D2V"/>
                         <outlet property="pictureImage" destination="ZQ4-JM-wfz" id="r6v-8L-hKj"/>
+                        <outlet property="swipeDownImg" destination="Q9N-Pf-fMa" id="fGA-O8-otB"/>
+                        <outlet property="swipeLeftImg" destination="ccY-hi-uI7" id="5bU-IP-adB"/>
+                        <outlet property="swipeRightImg" destination="0It-8c-opy" id="BOq-G9-V08"/>
+                        <outlet property="swipeUpImg" destination="0Ez-VW-5hx" id="UDb-k4-L3R"/>
                         <outlet property="takeAnother" destination="6k2-Df-KCR" id="h39-nA-xm8"/>
                     </connections>
                 </viewController>
@@ -687,14 +707,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Camera_Grey" width="100" height="68"/>
+        <image name="Down_Arrow" width="289" height="261"/>
         <image name="DrawCircle" width="144" height="144"/>
         <image name="FBIcon" width="256" height="256"/>
         <image name="FlickrIcon" width="256" height="256"/>
-        <image name="FlipCamera" width="100" height="100"/>
         <image name="GIcon" width="256" height="256"/>
         <image name="GestureIcon" width="256" height="256"/>
         <image name="GuestIcon" width="128" height="128"/>
+        <image name="LeftArrow" width="261" height="289"/>
         <image name="LinkedInIcon" width="256" height="256"/>
+        <image name="RightArrow" width="261" height="289"/>
         <image name="SampleImage" width="1224" height="1632"/>
         <image name="SettingGear" width="22" height="22"/>
         <image name="SignG" width="220" height="34"/>
@@ -707,8 +730,9 @@
         <image name="TipIcon" width="256" height="256"/>
         <image name="TumblrIcon" width="256" height="256"/>
         <image name="TwitterIcon" width="256" height="256"/>
+        <image name="UpArrow" width="289" height="261"/>
         <image name="WeiboIcon" width="256" height="256"/>
         <image name="iMessageIcon" width="113" height="113"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.50492869127516782" colorSpace="calibratedRGB"/>
 </document>

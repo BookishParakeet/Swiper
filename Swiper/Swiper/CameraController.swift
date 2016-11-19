@@ -11,22 +11,62 @@ import Social
 import MessageUI
 import AVFoundation
 
-class CameraController: UIViewController {
+class CameraController:UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var stillImageOutput : AVCaptureStillImageOutput?
     var captureSession : AVCaptureSession?
     var previewLayer : AVCaptureVideoPreviewLayer?
     var firstTime: Bool = true
-    
     @IBOutlet var cameraView: UIView!
-    
     @IBOutlet var pictureImage: UIImageView!
-
     @IBOutlet var takeAnother: UIButton!
     @IBOutlet var imagePicker: UIImageView!
+    var phoneNumber: String!
+    @IBOutlet var swipeLeftImg: UIImageView!
+    @IBOutlet var swipeRightImg: UIImageView!
+    @IBOutlet var swipeUpImg: UIImageView!
+    @IBOutlet var swipeDownImg: UIImageView!
     
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneNumber = "1234567890"
+        assignSwipeAction()
     }
+    func assignSwipeAction() {
+        let upRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleUp))
+        upRecognizer.direction = UISwipeGestureRecognizerDirection.up
+        self.view?.addGestureRecognizer(upRecognizer)
+        
+        let downRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleDown))
+        downRecognizer.direction = UISwipeGestureRecognizerDirection.down
+        self.view?.addGestureRecognizer(downRecognizer)
+        
+        let leftRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleLeft))
+        leftRecognizer.direction = UISwipeGestureRecognizerDirection.left
+        self.view?.addGestureRecognizer(leftRecognizer)
+        
+        let rightRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleRight))
+        rightRecognizer.direction = UISwipeGestureRecognizerDirection.right
+        self.view?.addGestureRecognizer(rightRecognizer)
+    }
+    
+    func handleRight() {
+        shareImageWithTwitter()
+    }
+    
+    func handleLeft() {
+        shareImageWithFacebook()
+    }
+    
+    func handleDown() {
+        sendImageMessage()
+    }
+    
+    func handleUp() {
+        shareImageWithWeibo()
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,11 +75,6 @@ class CameraController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        let rect = CGRect(origin: CGPoint(x: 50,y :300), size: CGSize(width: 100, height: 100))
-
-//        previewLayer?.frame = cameraView.bounds
-//          previewLayer?.frame = self.view.bounds
-//        previewLayer?.frame = rect
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +82,67 @@ class CameraController: UIViewController {
         previewLayer?.frame = self.view.bounds;
     }
     
+    
+    func sendImageMessage() {
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Message Body"
+            controller.addAttachmentData(UIImageJPEGRepresentation(pictureImage.image!, 1)!, typeIdentifier: "image/jpg", filename: "images.jpg")
+            controller.recipients = [phoneNumber]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
+    func shareImageWithFacebook() {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook){
+            let facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookSheet.setInitialText("Share on Facebook")
+            facebookSheet.add(pictureImage.image)
+            self.present(facebookSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func shareImageWithTwitter() {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+            let twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            twitterSheet.setInitialText("Share on Twitter")
+            twitterSheet.add(pictureImage.image)
+            self.present(twitterSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    /**
+     sharing image with weibo
+     **/
+    func shareImageWithWeibo() {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTencentWeibo){
+            let weiboSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTencentWeibo)
+            weiboSheet.setInitialText("Share on Weibo")
+            weiboSheet.add(pictureImage.image)
+            self.present(weiboSheet, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Accounts", message: "Please login to a Weibo account to share.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -83,7 +179,6 @@ class CameraController: UIViewController {
                 
                 previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
                 
-                          
                 cameraView.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
                 
@@ -109,6 +204,10 @@ class CameraController: UIViewController {
                     self.pictureImage.image = image
                     self.view.bringSubview(toFront: self.imagePicker)
                     self.view.bringSubview(toFront: self.takeAnother)
+                    self.view.bringSubview(toFront: self.swipeLeftImg)
+                    self.view.bringSubview(toFront: self.swipeRightImg)
+                     self.view.bringSubview(toFront: self.swipeUpImg)
+                     self.view.bringSubview(toFront: self.swipeDownImg)
                 }
             })
         }
@@ -120,6 +219,10 @@ class CameraController: UIViewController {
         if didTakePhoto == true{
             didTakePhoto = false
             self.view.sendSubview(toBack: pictureImage)
+            self.view.sendSubview(toBack: swipeLeftImg)
+            self.view.sendSubview(toBack: swipeRightImg)
+            self.view.sendSubview(toBack: swipeUpImg)
+            self.view.sendSubview(toBack: swipeDownImg)
         }
         else{
             captureSession?.startRunning()
