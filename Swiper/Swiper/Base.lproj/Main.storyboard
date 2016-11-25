@@ -74,6 +74,11 @@
                                 <frame key="frameInset" minX="158" minY="520" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-8h-hSc">
+                                <frame key="frameInset" minX="320" minY="520" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="TipIcon"/>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CYj-Xf-Pdf">
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,14 +102,6 @@
                                     <action selector="takePhoto:" destination="5WA-cz-If0" eventType="touchUpInside" id="A6z-Rr-eSM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-8h-hSc">
-                                <frame key="frameInset" minX="310" minY="520" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="TipIcon"/>
-                                <connections>
-                                    <segue destination="sGX-o1-4yu" kind="show" id="yVy-VZ-AuF"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-YH-7Dk">
                                 <frame key="frameInset" minX="15" minY="575" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,7 +113,6 @@
                         <outlet property="cameraView" destination="CYj-Xf-Pdf" id="o47-yU-pPd"/>
                         <outlet property="imagePicker" destination="UaD-YH-7Dk" id="o0l-uL-D2V"/>
                         <outlet property="pictureImage" destination="ZQ4-JM-wfz" id="r6v-8L-hKj"/>
-                        <outlet property="settingsButton" destination="kLZ-8h-hSc" id="Slg-Kq-oqW"/>
                         <outlet property="swipeDownImg" destination="Q9N-Pf-fMa" id="fGA-O8-otB"/>
                         <outlet property="swipeLeftImg" destination="ccY-hi-uI7" id="5bU-IP-adB"/>
                         <outlet property="swipeRightImg" destination="0It-8c-opy" id="BOq-G9-V08"/>
@@ -482,7 +478,7 @@
         <!--Account-->
         <scene sceneID="htj-ie-UOZ">
             <objects>
-                <viewController title="Account" id="bEg-7I-DBX" customClass="AccountController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Account" id="bEg-7I-DBX" customClass="SignInController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GbQ-W1-8zu"/>
                         <viewControllerLayoutGuide type="bottom" id="mkC-lW-kLR"/>
@@ -552,10 +548,10 @@
                             <tableViewSection headerTitle="Swipe Up" id="ZxD-Kv-FYl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="4iJ-5w-3ee" customClass="PickerGestureCell" customModule="Swiper" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4iJ-5w-3ee" id="DnG-M3-YnJ">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwipeUp" translatesAutoresizingMaskIntoConstraints="NO" id="MgO-4r-407">
@@ -574,10 +570,10 @@
                             <tableViewSection headerTitle="Swipe Down" id="J6I-Jc-BmN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="V1Q-bc-9wg">
-                                        <rect key="frame" x="0.0" y="157" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V1Q-bc-9wg" id="at5-pF-bUa" userLabel="Swipe Down To">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwipeDown" translatesAutoresizingMaskIntoConstraints="NO" id="6OG-og-o18">
@@ -596,10 +592,10 @@
                             <tableViewSection headerTitle="Swipe Left" id="zVW-1t-TFz">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="4zM-sc-Z3t">
-                                        <rect key="frame" x="0.0" y="258" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4zM-sc-Z3t" id="STq-Xv-wUE" userLabel="Swipe Left To">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwipeLeft" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-3g-Xfg">
@@ -618,10 +614,10 @@
                             <tableViewSection headerTitle="Swipe Right" id="Wcj-zN-fnd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="nBu-MO-LTh">
-                                        <rect key="frame" x="0.0" y="359" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="355.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nBu-MO-LTh" id="qQZ-Rg-ro9" userLabel="Swipe Right To">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwipeRight" translatesAutoresizingMaskIntoConstraints="NO" id="H3d-0i-bIp">
@@ -640,10 +636,10 @@
                             <tableViewSection headerTitle="Drow circle" id="Foo-z2-mNk">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="TYS-Z0-ChK">
-                                        <rect key="frame" x="0.0" y="460" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="455.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYS-Z0-ChK" id="xtz-ME-5CY" userLabel="Circle To">
-                                            <frame key="frameInset" width="342" height="43"/>
+                                            <frame key="frameInset" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DrawCircle" translatesAutoresizingMaskIntoConstraints="NO" id="Vwi-ic-gBi">
@@ -701,7 +697,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uty-h4-7za">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Uty-h4-7za">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -743,8 +739,5 @@
         <image name="WeiboIcon" width="256" height="256"/>
         <image name="iMessageIcon" width="113" height="113"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="yVy-VZ-AuF"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="0.50492869127516782" colorSpace="calibratedRGB"/>
 </document>

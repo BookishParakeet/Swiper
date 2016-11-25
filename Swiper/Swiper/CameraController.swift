@@ -244,5 +244,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         didPressTakeAnother()
         firstTime = true
     }
+    
+    
 }
 

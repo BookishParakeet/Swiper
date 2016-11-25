@@ -17,6 +17,32 @@
 		2A5D53291DD92473002C0377 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D53281DD92473002C0377 /* SettingController.swift */; };
 		2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */; };
 		2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C36851DDFBF5900D759BD /* CameraController.swift */; };
+		CB5449B21DE543A0001251CC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5449B11DE543A0001251CC /* SignInController.swift */; };
+		CBFCFA741DE7D72A00D51F74 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = CBFCFA731DE7D72A00D51F74 /* Sdk */; };
+		CBFCFA781DE7D78600D51F74 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA761DE7D78600D51F74 /* AWSCore.framework */; };
+		CBFCFA791DE7D78600D51F74 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA761DE7D78600D51F74 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBFCFA7A1DE7D78600D51F74 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */; };
+		CBFCFA7B1DE7D78600D51F74 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBFCFA841DE7D82900D51F74 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */; };
+		CBFCFA851DE7D82900D51F74 /* AWSMobileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */; };
+		CBFCFA861DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */; };
+		CBFCFA871DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */; };
+		CBFCFA881DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */; };
+		CBFCFA891DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */; };
+		CBFCFA8C1DE7D8B800D51F74 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA8B1DE7D8B800D51F74 /* libsqlite3.tbd */; };
+		CBFCFA8E1DE7D8C300D51F74 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA8D1DE7D8C300D51F74 /* libz.tbd */; };
+		CBFCFA961DE7D98200D51F74 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA8F1DE7D98200D51F74 /* GoogleAppUtilities.framework */; };
+		CBFCFA971DE7D98200D51F74 /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA901DE7D98200D51F74 /* GoogleAuthUtilities.framework */; };
+		CBFCFA981DE7D98200D51F74 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA911DE7D98200D51F74 /* GoogleNetworkingUtilities.framework */; };
+		CBFCFA991DE7D98200D51F74 /* GoogleSignIn.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA921DE7D98200D51F74 /* GoogleSignIn.bundle */; };
+		CBFCFA9A1DE7D98200D51F74 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA931DE7D98200D51F74 /* GoogleSignIn.framework */; };
+		CBFCFA9B1DE7D98200D51F74 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA941DE7D98200D51F74 /* GoogleSymbolUtilities.framework */; };
+		CBFCFA9C1DE7D98200D51F74 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA951DE7D98200D51F74 /* GoogleUtilities.framework */; };
+		CBFCFA9E1DE7D9CB00D51F74 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA9D1DE7D9CB00D51F74 /* AddressBook.framework */; };
+		CBFCFAA01DE7D9D400D51F74 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA9F1DE7D9D400D51F74 /* SafariServices.framework */; };
+		CBFCFAA21DE7D9DB00D51F74 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFAA11DE7D9DB00D51F74 /* SystemConfiguration.framework */; };
+		CBFCFAA51DE7D9F200D51F74 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFAA31DE7D9F200D51F74 /* FBSDKCoreKit.framework */; };
+		CBFCFAA61DE7D9F200D51F74 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFAA41DE7D9F200D51F74 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +62,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CBFCFA7C1DE7D78700D51F74 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CBFCFA7B1DE7D78600D51F74 /* AWSDynamoDB.framework in Embed Frameworks */,
+				CBFCFA791DE7D78600D51F74 /* AWSCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2A5D52F71DD920C6002C0377 /* Swiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5D52FA1DD920C6002C0377 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +94,28 @@
 		2A5D53281DD92473002C0377 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDetailsController.swift; sourceTree = "<group>"; };
 		2A8C36851DDFBF5900D759BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		CB5449B11DE543A0001251CC /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		CBFCFA731DE7D72A00D51F74 /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
+		CBFCFA751DE7D76D00D51F74 /* Aws */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Aws; path = Sdk/Aws; sourceTree = "<group>"; };
+		CBFCFA761DE7D78600D51F74 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
+		CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = Sdk/Aws/AWSDynamoDB.framework; sourceTree = "<group>"; };
+		CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSMobileClient.swift; sourceTree = "<group>"; };
+		CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSMobileHubHelper.framework; sourceTree = "<group>"; };
+		CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureUsUserSetting1.swift; sourceTree = "<group>"; };
+		CBFCFA8B1DE7D8B800D51F74 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CBFCFA8D1DE7D8C300D51F74 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CBFCFA8F1DE7D98200D51F74 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = Sdk/Google/GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA901DE7D98200D51F74 /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAuthUtilities.framework; path = Sdk/Google/GoogleAuthUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA911DE7D98200D51F74 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Sdk/Google/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA921DE7D98200D51F74 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Sdk/Google/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		CBFCFA931DE7D98200D51F74 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Sdk/Google/GoogleSignIn.framework; sourceTree = "<group>"; };
+		CBFCFA941DE7D98200D51F74 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Sdk/Google/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA951DE7D98200D51F74 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Sdk/Google/GoogleUtilities.framework; sourceTree = "<group>"; };
+		CBFCFA9D1DE7D9CB00D51F74 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CBFCFA9F1DE7D9D400D51F74 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		CBFCFAA11DE7D9DB00D51F74 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CBFCFAA31DE7D9F200D51F74 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Sdk/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CBFCFAA41DE7D9F200D51F74 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Sdk/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +123,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFCFAA51DE7D9F200D51F74 /* FBSDKCoreKit.framework in Frameworks */,
+				CBFCFAA61DE7D9F200D51F74 /* FBSDKLoginKit.framework in Frameworks */,
+				CBFCFAA21DE7D9DB00D51F74 /* SystemConfiguration.framework in Frameworks */,
+				CBFCFAA01DE7D9D400D51F74 /* SafariServices.framework in Frameworks */,
+				CBFCFA9E1DE7D9CB00D51F74 /* AddressBook.framework in Frameworks */,
+				CBFCFA961DE7D98200D51F74 /* GoogleAppUtilities.framework in Frameworks */,
+				CBFCFA971DE7D98200D51F74 /* GoogleAuthUtilities.framework in Frameworks */,
+				CBFCFA981DE7D98200D51F74 /* GoogleNetworkingUtilities.framework in Frameworks */,
+				CBFCFA991DE7D98200D51F74 /* GoogleSignIn.bundle in Frameworks */,
+				CBFCFA9A1DE7D98200D51F74 /* GoogleSignIn.framework in Frameworks */,
+				CBFCFA9B1DE7D98200D51F74 /* GoogleSymbolUtilities.framework in Frameworks */,
+				CBFCFA9C1DE7D98200D51F74 /* GoogleUtilities.framework in Frameworks */,
+				CBFCFA8E1DE7D8C300D51F74 /* libz.tbd in Frameworks */,
+				CBFCFA8C1DE7D8B800D51F74 /* libsqlite3.tbd in Frameworks */,
+				CBFCFA7A1DE7D78600D51F74 /* AWSDynamoDB.framework in Frameworks */,
+				CBFCFA781DE7D78600D51F74 /* AWSCore.framework in Frameworks */,
+				CBFCFA861DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFCFA871DE7D82900D51F74 /* AWSMobileHubHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +164,16 @@
 		2A5D52EE1DD920C6002C0377 = {
 			isa = PBXGroup;
 			children = (
+				CBFCFA761DE7D78600D51F74 /* AWSCore.framework */,
+				CBFCFA771DE7D78600D51F74 /* AWSDynamoDB.framework */,
+				CBFCFA751DE7D76D00D51F74 /* Aws */,
 				2A5D52F91DD920C6002C0377 /* Swiper */,
 				2A5D530E1DD920C6002C0377 /* SwiperTests */,
+				CBFCFA7E1DE7D82900D51F74 /* AmazonAws */,
 				2A5D53191DD920C6002C0377 /* SwiperUITests */,
 				2A5D52F81DD920C6002C0377 /* Products */,
+				CBFCFA731DE7D72A00D51F74 /* Sdk */,
+				CBFCFA8A1DE7D8B800D51F74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +199,7 @@
 				2A5D53011DD920C6002C0377 /* Assets.xcassets */,
 				2A5D53031DD920C6002C0377 /* LaunchScreen.storyboard */,
 				2A5D53061DD920C6002C0377 /* Info.plist */,
+				CB5449B11DE543A0001251CC /* SignInController.swift */,
 			);
 			path = Swiper;
 			sourceTree = "<group>";
@@ -134,6 +222,54 @@
 			path = SwiperUITests;
 			sourceTree = "<group>";
 		};
+		CBFCFA7E1DE7D82900D51F74 /* AmazonAws */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA7F1DE7D82900D51F74 /* AWSMobileClient.swift */,
+				CBFCFA801DE7D82900D51F74 /* AWSMobileHubHelper.framework */,
+				CBFCFA811DE7D82900D51F74 /* Models */,
+			);
+			name = AmazonAws;
+			path = SwiperTests/AmazonAws;
+			sourceTree = "<group>";
+		};
+		CBFCFA811DE7D82900D51F74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA821DE7D82900D51F74 /* NoSQL */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CBFCFA821DE7D82900D51F74 /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFA831DE7D82900D51F74 /* PictureUsUserSetting1.swift */,
+			);
+			path = NoSQL;
+			sourceTree = "<group>";
+		};
+		CBFCFA8A1DE7D8B800D51F74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBFCFAA31DE7D9F200D51F74 /* FBSDKCoreKit.framework */,
+				CBFCFAA41DE7D9F200D51F74 /* FBSDKLoginKit.framework */,
+				CBFCFAA11DE7D9DB00D51F74 /* SystemConfiguration.framework */,
+				CBFCFA9F1DE7D9D400D51F74 /* SafariServices.framework */,
+				CBFCFA9D1DE7D9CB00D51F74 /* AddressBook.framework */,
+				CBFCFA8F1DE7D98200D51F74 /* GoogleAppUtilities.framework */,
+				CBFCFA901DE7D98200D51F74 /* GoogleAuthUtilities.framework */,
+				CBFCFA911DE7D98200D51F74 /* GoogleNetworkingUtilities.framework */,
+				CBFCFA921DE7D98200D51F74 /* GoogleSignIn.bundle */,
+				CBFCFA931DE7D98200D51F74 /* GoogleSignIn.framework */,
+				CBFCFA941DE7D98200D51F74 /* GoogleSymbolUtilities.framework */,
+				CBFCFA951DE7D98200D51F74 /* GoogleUtilities.framework */,
+				CBFCFA8D1DE7D8C300D51F74 /* libz.tbd */,
+				CBFCFA8B1DE7D8B800D51F74 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +280,8 @@
 				2A5D52F31DD920C6002C0377 /* Sources */,
 				2A5D52F41DD920C6002C0377 /* Frameworks */,
 				2A5D52F51DD920C6002C0377 /* Resources */,
+				CBFCFA7C1DE7D78700D51F74 /* Embed Frameworks */,
+				CBFCFA7D1DE7D7B300D51F74 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -202,7 +340,7 @@
 				TargetAttributes = {
 					2A5D52F61DD920C6002C0377 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = V36F8HDW4N;
+						DevelopmentTeam = WPS3Y6MWD7;
 						ProvisioningStyle = Automatic;
 					};
 					2A5D530A1DD920C6002C0377 = {
@@ -243,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A5D53051DD920C6002C0377 /* LaunchScreen.storyboard in Resources */,
+				CBFCFA741DE7D72A00D51F74 /* Sdk in Resources */,
 				2A5D53021DD920C6002C0377 /* Assets.xcassets in Resources */,
 				2A5D53001DD920C6002C0377 /* Main.storyboard in Resources */,
 			);
@@ -264,14 +403,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CBFCFA7D1DE7D7B300D51F74 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A5D52F31DD920C6002C0377 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFCFA881DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */,
 				2A5D53291DD92473002C0377 /* SettingController.swift in Sources */,
 				2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */,
+				CBFCFA841DE7D82900D51F74 /* AWSMobileClient.swift in Sources */,
 				2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */,
+				CB5449B21DE543A0001251CC /* SignInController.swift in Sources */,
 				2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */,
 				2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */,
 			);
@@ -281,7 +439,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFCFA851DE7D82900D51F74 /* AWSMobileClient.swift in Sources */,
 				2A5D53101DD920C6002C0377 /* SwiperTests.swift in Sources */,
+				CBFCFA891DE7D82900D51F74 /* PictureUsUserSetting1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,10 +583,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V36F8HDW4N;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Google",
+					"$(PROJECT_DIR)/Sdk/Facebook",
+				);
 				INFOPLIST_FILE = Swiper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.Swiper;
+				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -436,10 +604,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V36F8HDW4N;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sdk/Aws",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+					"$(PROJECT_DIR)/Sdk/Google",
+					"$(PROJECT_DIR)/Sdk/Facebook",
+				);
 				INFOPLIST_FILE = Swiper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.Swiper;
+				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -450,6 +626,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+				);
 				INFOPLIST_FILE = SwiperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperTests;
@@ -464,6 +644,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiperTests/AmazonAws",
+				);
 				INFOPLIST_FILE = SwiperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BookishParakeet.SwiperTests;
