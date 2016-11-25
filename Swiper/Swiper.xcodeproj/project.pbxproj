@@ -18,6 +18,7 @@
 		2A6D7CB01DD9881C006B5A94 /* GestureDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */; };
 		2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C36851DDFBF5900D759BD /* CameraController.swift */; };
 		CB5449B21DE543A0001251CC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5449B11DE543A0001251CC /* SignInController.swift */; };
+		CB83153E1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */; };
 		CBABA3BB1DE7F75D007752EC /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */; };
 		CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABA3C01DE80834007752EC /* LogoutViewController.swift */; };
 		CBFCFA741DE7D72A00D51F74 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = CBFCFA731DE7D72A00D51F74 /* Sdk */; };
@@ -97,6 +98,7 @@
 		2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDetailsController.swift; sourceTree = "<group>"; };
 		2A8C36851DDFBF5900D759BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		CB5449B11DE543A0001251CC /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeSwipeDirectionViewController.swift; sourceTree = "<group>"; };
 		CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		CBABA3C01DE80834007752EC /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		CBFCFA731DE7D72A00D51F74 /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				2A5D52FC1DD920C6002C0377 /* MasterController.swift */,
 				2A5D53281DD92473002C0377 /* SettingController.swift */,
 				2A6D7CAF1DD9881C006B5A94 /* GestureDetailsController.swift */,
+				CB83153D1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift */,
 				2A8C36851DDFBF5900D759BD /* CameraController.swift */,
 				2A5D52FE1DD920C6002C0377 /* Main.storyboard */,
 				2A5D53011DD920C6002C0377 /* Assets.xcassets */,
@@ -438,6 +441,7 @@
 				2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */,
 				CB5449B21DE543A0001251CC /* SignInController.swift in Sources */,
 				2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */,
+				CB83153E1DE8FA80004328CB /* ChangeSwipeDirectionViewController.swift in Sources */,
 				CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */,
 				2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */,
 			);

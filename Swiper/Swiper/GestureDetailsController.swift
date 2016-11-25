@@ -107,5 +107,19 @@ class GestureDetailsController: UITableViewController {
         rightImage.image = socialMediaTypes[rightSetting]
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC: ChangeSwipeDirectionViewController = segue.destination as! ChangeSwipeDirectionViewController
+        if (segue.identifier == "swipeUpSegue") {
+            nextVC.passedDirection = "up"
+        } else if (segue.identifier == "swipeDownSegue") {
+            nextVC.passedDirection = "down"
+        } else if (segue.identifier == "swipeLeftSegue") {
+            nextVC.passedDirection = "left"
+        } else {
+            nextVC.passedDirection = "right"
+        }
+    }
+    
+    
 }
 
