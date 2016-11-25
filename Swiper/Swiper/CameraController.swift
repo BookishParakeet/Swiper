@@ -10,6 +10,9 @@ import UIKit
 import Social
 import MessageUI
 import AVFoundation
+import AWSDynamoDB
+import AWSMobileHubHelper
+
 
 class CameraController:UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var stillImageOutput : AVCaptureStillImageOutput?
@@ -27,15 +30,25 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var takeAnotherPhotoButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
     @IBOutlet var imagePickerButton: UIButton!
-    
     let imagePicker = UIImagePickerController()
+    
+    @IBOutlet var leftImage: UIImageView!
+    @IBOutlet var rightImage: UIImageView!
+    @IBOutlet var upImage: UIImageView!
+    @IBOutlet var downImage: UIImageView!
+    
+    let socialMediaTypes = [
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon")
+    ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        phoneNumber = "1234567890"
         assignSwipeAction()
         imagePicker.delegate = self
+        setMediaIcons()
     }
+    
     func assignSwipeAction() {
         let upRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleUp))
         upRecognizer.direction = UISwipeGestureRecognizerDirection.up
@@ -200,7 +213,12 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     self.view.bringSubview(toFront: self.swipeRightImg)
                      self.view.bringSubview(toFront: self.swipeUpImg)
                      self.view.bringSubview(toFront: self.swipeDownImg)
+                    self.view.bringSubview(toFront: self.rightImage)
+                     self.view.bringSubview(toFront: self.leftImage)
+                     self.view.bringSubview(toFront: self.upImage)
+                     self.view.bringSubview(toFront: self.downImage)
                     self.view.sendSubview(toBack: self.imagePickerButton)
+                    
                 
                 }
             })
@@ -219,6 +237,10 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             self.view.sendSubview(toBack: swipeDownImg)
             self.view.sendSubview(toBack: takeAnotherPhotoButton)
             self.view.bringSubview(toFront: imagePickerButton)
+            self.view.sendSubview(toBack: leftImage)
+            self.view.sendSubview(toBack: rightImage)
+            self.view.sendSubview(toBack: upImage)
+            self.view.sendSubview(toBack: downImage)
         }
         else{
             captureSession?.startRunning()
@@ -270,5 +292,40 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    func setMediaIcons() {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        
+        dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
+            if (task.error == nil) {
+                if (task.result != nil) {
+                    let tableRow = task.result as! PictureUsUserSetting1
+                    self.setImages(leftSetting: tableRow._left!, rightSetting: tableRow._right!, upSetting: tableRow._up!, downSetting: tableRow._down!)
+                }
+            } else {
+                self.setDefaults()
+            }
+            return nil
+        })
+    }
+    
+    func setDefaults() {
+        print ("setting defaults")
+        upImage.image = socialMediaTypes["weibo"]
+        downImage.image = socialMediaTypes["imessage"]
+        leftImage.image = socialMediaTypes["facebook"]
+        rightImage.image = socialMediaTypes["twitter"]
+        phoneNumber = ""
+    }
+    
+    func setImages (leftSetting: String, rightSetting: String, upSetting: String, downSetting: String) {
+        print ("setting from db")
+        upImage.image = socialMediaTypes[upSetting]
+        downImage.image = socialMediaTypes[downSetting]
+        leftImage.image = socialMediaTypes[leftSetting]
+        rightImage.image = socialMediaTypes[rightSetting]
+    }
+
 }
 

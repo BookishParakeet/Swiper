@@ -19,6 +19,7 @@
 		2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8C36851DDFBF5900D759BD /* CameraController.swift */; };
 		CB5449B21DE543A0001251CC /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5449B11DE543A0001251CC /* SignInController.swift */; };
 		CBABA3BB1DE7F75D007752EC /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */; };
+		CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABA3C01DE80834007752EC /* LogoutViewController.swift */; };
 		CBFCFA741DE7D72A00D51F74 /* Sdk in Resources */ = {isa = PBXBuildFile; fileRef = CBFCFA731DE7D72A00D51F74 /* Sdk */; };
 		CBFCFA781DE7D78600D51F74 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA761DE7D78600D51F74 /* AWSCore.framework */; };
 		CBFCFA791DE7D78600D51F74 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBFCFA761DE7D78600D51F74 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -97,6 +98,7 @@
 		2A8C36851DDFBF5900D759BD /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		CB5449B11DE543A0001251CC /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		CBABA3BA1DE7F75D007752EC /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		CBABA3C01DE80834007752EC /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		CBFCFA731DE7D72A00D51F74 /* Sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sdk; sourceTree = "<group>"; };
 		CBFCFA751DE7D76D00D51F74 /* Aws */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Aws; path = Sdk/Aws; sourceTree = "<group>"; };
 		CBFCFA761DE7D78600D51F74 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				2A8C36851DDFBF5900D759BD /* CameraController.swift */,
 				2A5D52FE1DD920C6002C0377 /* Main.storyboard */,
 				2A5D53011DD920C6002C0377 /* Assets.xcassets */,
+				CBABA3C01DE80834007752EC /* LogoutViewController.swift */,
 				2A5D53031DD920C6002C0377 /* LaunchScreen.storyboard */,
 				2A5D53061DD920C6002C0377 /* Info.plist */,
 				CB5449B11DE543A0001251CC /* SignInController.swift */,
@@ -435,6 +438,7 @@
 				2A5D52FD1DD920C6002C0377 /* MasterController.swift in Sources */,
 				CB5449B21DE543A0001251CC /* SignInController.swift in Sources */,
 				2A5D52FB1DD920C6002C0377 /* AppDelegate.swift in Sources */,
+				CBABA3C11DE80834007752EC /* LogoutViewController.swift in Sources */,
 				2A8C36861DDFBF5900D759BD /* CameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,8 @@ import AWSMobileHubHelper
 
 
 class MasterController: UIViewController {
+    static var mainViewcontroller: UIViewController?
+
     @IBOutlet var navigationBar: UINavigationItem!
     var signInObserver: AnyObject!
     var signOutObserver: AnyObject!
