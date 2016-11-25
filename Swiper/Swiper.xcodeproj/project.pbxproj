@@ -594,6 +594,17 @@
 				INFOPLIST_FILE = Swiper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleUtilities.framework/GoogleUtilities",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleSignIn.framework/GoogleSignIn",
+					"$(inherited)",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKLoginKit.framework/FBSDKLoginKit",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -615,6 +626,17 @@
 				INFOPLIST_FILE = Swiper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleUtilities.framework/GoogleUtilities",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Google/GoogleSignIn.framework/GoogleSignIn",
+					"$(inherited)",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKLoginKit.framework/FBSDKLoginKit",
+					"-force_load",
+					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Charlie-Wang.PictureUs";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
