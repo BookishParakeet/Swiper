@@ -23,7 +23,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var swipeRightImg: UIImageView!
     @IBOutlet var swipeUpImg: UIImageView!
     @IBOutlet var swipeDownImg: UIImageView!
-    @IBOutlet var flipCameraButton: UIButton!
     
     @IBOutlet var takeAnotherPhotoButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
@@ -79,13 +78,9 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        previewLayer?.frame = cameraView.bounds
+
     }
-    
-    override func viewDidLayoutSubviews() {
-        print ("got into viewdid layout subviews")
-        previewLayer?.frame = self.view.bounds;
-    }
-    
     
     func sendImageMessage() {
         if (MFMessageComposeViewController.canSendText()) {
@@ -149,8 +144,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
 
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
         super.viewWillAppear(animated)
         
         captureSession = AVCaptureSession()
@@ -178,11 +171,8 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                 captureSession?.addOutput(stillImageOutput)
                 
                 previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                
                 previewLayer?.videoGravity = AVLayerVideoGravityResizeAspect
-                
                 previewLayer?.connection.videoOrientation = AVCaptureVideoOrientation.portrait
-                
                 cameraView.layer.addSublayer(previewLayer!)
                 captureSession?.startRunning()
                 
@@ -210,7 +200,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     self.view.bringSubview(toFront: self.swipeRightImg)
                      self.view.bringSubview(toFront: self.swipeUpImg)
                      self.view.bringSubview(toFront: self.swipeDownImg)
-                    self.view.sendSubview(toBack: self.flipCameraButton)
                     self.view.sendSubview(toBack: self.imagePickerButton)
                 
                 }
@@ -229,7 +218,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             self.view.sendSubview(toBack: swipeUpImg)
             self.view.sendSubview(toBack: swipeDownImg)
             self.view.sendSubview(toBack: takeAnotherPhotoButton)
-            self.view.bringSubview(toFront: flipCameraButton)
             self.view.bringSubview(toFront: imagePickerButton)
         }
         else{
@@ -272,7 +260,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
 //            self.view.bringSubview(toFront: self.swipeRightImg)
 //            self.view.bringSubview(toFront: self.swipeUpImg)
 //            self.view.bringSubview(toFront: self.swipeDownImg)
-//            self.view.sendSubview(toBack: self.flipCameraButton)
 //            self.view.sendSubview(toBack: self.imagePickerButton)
 //            
 //        }
@@ -282,12 +269,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
-    }
-    @IBAction func flipCamera(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Flip Camera", message: "Front camera feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-
     }
 }
 
