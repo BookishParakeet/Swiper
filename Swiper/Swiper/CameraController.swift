@@ -18,21 +18,24 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     var firstTime: Bool = true
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pictureImage: UIImageView!
-    @IBOutlet var takeAnother: UIButton!
-    @IBOutlet var imagePicker: UIImageView!
     var phoneNumber: String!
     @IBOutlet var swipeLeftImg: UIImageView!
     @IBOutlet var swipeRightImg: UIImageView!
     @IBOutlet var swipeUpImg: UIImageView!
     @IBOutlet var swipeDownImg: UIImageView!
+    @IBOutlet var flipCameraButton: UIButton!
     
+    @IBOutlet var takeAnotherPhotoButton: UIButton!
     @IBOutlet var settingsButton: UIButton!
+    @IBOutlet var imagePickerButton: UIButton!
     
+    let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         phoneNumber = "1234567890"
         assignSwipeAction()
+        imagePicker.delegate = self
     }
     func assignSwipeAction() {
         let upRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleUp))
@@ -187,7 +190,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         }
     }
     
-    
     func didPressTakePhoto(){
         if let videoConnection = stillImageOutput?.connection(withMediaType: AVMediaTypeVideo){
             videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
@@ -203,12 +205,14 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
                     
                     self.pictureImage.image = image
-                    self.view.bringSubview(toFront: self.imagePicker)
-                    self.view.bringSubview(toFront: self.takeAnother)
+                    self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
                     self.view.bringSubview(toFront: self.swipeLeftImg)
                     self.view.bringSubview(toFront: self.swipeRightImg)
                      self.view.bringSubview(toFront: self.swipeUpImg)
                      self.view.bringSubview(toFront: self.swipeDownImg)
+                    self.view.sendSubview(toBack: self.flipCameraButton)
+                    self.view.sendSubview(toBack: self.imagePickerButton)
+                
                 }
             })
         }
@@ -224,6 +228,9 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             self.view.sendSubview(toBack: swipeRightImg)
             self.view.sendSubview(toBack: swipeUpImg)
             self.view.sendSubview(toBack: swipeDownImg)
+            self.view.sendSubview(toBack: takeAnotherPhotoButton)
+            self.view.bringSubview(toFront: flipCameraButton)
+            self.view.bringSubview(toFront: imagePickerButton)
         }
         else{
             captureSession?.startRunning()
@@ -246,5 +253,41 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     
+    @IBAction func pickImageFromLibrary(_ sender: AnyObject) {
+//        imagePicker.allowsEditing = false
+//        imagePicker.sourceType = .photoLibrary
+//        
+//        present(imagePicker, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Image Picker", message: "Image Picker feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            pictureImage.contentMode = .scaleAspectFit
+//            pictureImage.image = pickedImage
+//            self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
+//            self.view.bringSubview(toFront: self.swipeLeftImg)
+//            self.view.bringSubview(toFront: self.swipeRightImg)
+//            self.view.bringSubview(toFront: self.swipeUpImg)
+//            self.view.bringSubview(toFront: self.swipeDownImg)
+//            self.view.sendSubview(toBack: self.flipCameraButton)
+//            self.view.sendSubview(toBack: self.imagePickerButton)
+//            
+//        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func flipCamera(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Flip Camera", message: "Front camera feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
+    }
 }
 
