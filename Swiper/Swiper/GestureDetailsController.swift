@@ -27,8 +27,6 @@ class GestureDetailsController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setMediaIcons()
-        print ("printing table view")
-        print(self.tableView)
 
         }
     
