@@ -760,7 +760,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.82055382013320921" green="0.82055382013320921" blue="0.82055382013320921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="currentMedia" destination="u0e-Dj-Acs" id="CCn-4H-PGP"/>

@@ -106,6 +106,7 @@ class GestureDetailsController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print ("preparing fo rsegue")
         let nextVC: ChangeSwipeDirectionViewController = segue.destination as! ChangeSwipeDirectionViewController
         if (segue.identifier == "swipeUpSegue") {
             nextVC.passedDirection = "up"

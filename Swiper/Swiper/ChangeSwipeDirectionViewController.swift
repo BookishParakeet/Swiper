@@ -17,9 +17,12 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     var thumbButt: UIButton?
     var passedDirection: String! = ""
     let socialMediaTypes = [
-        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon")
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
     ]
      var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon")]
+    
+     let buttonToSocialMedia = [
+        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
     
     @IBOutlet var currentMedia: UIImageView!
     override func viewDidLoad() {
@@ -34,8 +37,34 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    func buttonAction(button: UIButton) {
-        print("Load number: \(button.tag)")
+    func buttonAction(_ sender: UIButton!) {
+        var socialMedia = buttonToSocialMedia[sender.tag]
+        currentMedia.image = socialMediaTypes[socialMedia!]
+        updateNewSetting(newDirection: passedDirection, newMedia: socialMedia!)
+        
+    }
+    
+    func updateNewSetting(newDirection: String, newMedia: String) {
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
+        let uset = PictureUsUserSetting1()
+        uset?._userId = AWSIdentityManager.defaultIdentityManager().identityId!
+        if newDirection == "up" {
+            uset?._up = newMedia
+        } else if newDirection == "down" {
+            uset?._down = newMedia
+        } else if newDirection == "left" {
+            uset?._left = newMedia
+        } else {
+            uset?._right = newMedia
+        }
+        dynamoDBObjectMapper.save(uset!, completionHandler: {(error: Error?) -> Void in
+            if let error = error {
+                print("Amazon DynamoDB Save Error: \(error)")
+                return
+            }
+            
+        })
+        print ("saved")
     }
     
     override func viewWillLayoutSubviews(){
@@ -59,10 +88,14 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
             button.frame = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: buttonWidth, height: buttonHeight))
             button.setImage(buttonImage, for: .normal)
             button.showsTouchWhenHighlighted = true
-            button.addTarget(self, action: Selector(("buttonAction:")), for:.touchUpInside)
+            
+            button.addTarget(self, action: Selector("buttonAction:"), for: UIControlEvents.touchUpInside)
+            
             x +=  buttonWidth + buttonGap
             socialMediaScrollView.addSubview(button)
         }
+        
+        
         let buttonsCountFloat = CGFloat(Int(numberOfButtons))
         var x_val = buttonWidth * CGFloat(buttonsCountFloat+4)
         
