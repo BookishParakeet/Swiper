@@ -36,18 +36,24 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var rightImage: UIImageView!
     @IBOutlet var upImage: UIImageView!
     @IBOutlet var downImage: UIImageView!
-    
+    var firstLogin = true
+
     let socialMediaTypes = [
-        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon")
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
     ]
+    var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon")]
+    
+    let buttonToSocialMedia = [
+        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         assignSwipeAction()
         imagePicker.delegate = self
-        setMediaIcons()
     }
+    
     
     func assignSwipeAction() {
         let upRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CameraController.handleUp))
@@ -91,6 +97,13 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if firstLogin == true {
+            self.setDefaults()
+            firstLogin = false
+        } else {
+            setMediaIcons()
+        }
+        print ("viewdid appear")
         previewLayer?.frame = cameraView.bounds
 
     }
@@ -296,7 +309,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     func setMediaIcons() {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {

@@ -38,7 +38,9 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     }
     
     func buttonAction(_ sender: UIButton!) {
+        print ("sender tag")
         var socialMedia = buttonToSocialMedia[sender.tag]
+        print (socialMedia)
         currentMedia.image = socialMediaTypes[socialMedia!]
         updateNewSetting(newDirection: passedDirection, newMedia: socialMedia!)
         
@@ -46,27 +48,38 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     
     func updateNewSetting(newDirection: String, newMedia: String) {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        let uset = PictureUsUserSetting1()
-        uset?._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-        if newDirection == "up" {
-            uset?._up = newMedia
-        } else if newDirection == "down" {
-            uset?._down = newMedia
-        } else if newDirection == "left" {
-            uset?._left = newMedia
-        } else {
-            uset?._right = newMedia
-        }
-        dynamoDBObjectMapper.save(uset!, completionHandler: {(error: Error?) -> Void in
-            if let error = error {
-                print("Amazon DynamoDB Save Error: \(error)")
-                return
+        var uset = PictureUsUserSetting1()
+        dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
+            if (task.error == nil) {
+                if (task.result != nil) {
+                    print ("new table row")
+                    let tableRow = task.result as! PictureUsUserSetting1
+                    uset = tableRow
+                    if newDirection == "up" {
+                        uset?._up = newMedia
+                    } else if newDirection == "down" {
+                        uset?._down = newMedia
+                    } else if newDirection == "left" {
+                        uset?._left = newMedia
+                    } else {
+                        uset?._right = newMedia
+                    }
+                    dynamoDBObjectMapper.save(uset!, completionHandler: {(error: Error?) -> Void in
+                        if let error = error {
+                            print("Amazon DynamoDB Save Error: \(error)")
+                            return
+                        }
+                        
+                    })
+                    print ("saved")
+                }
+            } else {
+                print ("Could not update")
             }
-            
+            return nil
         })
-        print ("saved")
     }
-    
+
     override func viewWillLayoutSubviews(){
         super.viewWillLayoutSubviews();
     }
