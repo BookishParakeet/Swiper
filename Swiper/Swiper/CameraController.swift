@@ -153,6 +153,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     func shareWithSocialMedia(socialMedia:String!) {
+        print (socialMedia)
         if socialMedia == "imessage" {
             sendImageMessage()
         } else if socialMedia == "facebook" {
@@ -168,6 +169,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         }else if socialMedia == "tumblr" {
             shareImageWithTumblr()
         }else if socialMedia == "linkedin" {
+            print ("in linkedin!")
             shareImageWithLinkedIn()
         }else {
             let alert = UIAlertController(title: "Swiper", message: "We do not have that social media yet", preferredStyle: UIAlertControllerStyle.alert)
@@ -232,11 +234,9 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     func shareImageWithLinkedIn() {
-        func shareImageWithTumblr() {
             let alert = UIAlertController(title: "LinkedIn", message: "LinkedIn integration soon to come!", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        }
     }
     
     
