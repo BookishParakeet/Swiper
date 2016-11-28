@@ -16,7 +16,6 @@ import UIKit
 import AWSDynamoDB
 
 class PictureUsUserSetting1: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
-    
     var _userId: String?
     var _circle: String?
     var _doubleTap: String?
@@ -33,31 +32,33 @@ class PictureUsUserSetting1: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _upRight: String?
     
     class func dynamoDBTableName() -> String {
-
+        
         return "pictureusaws-mobilehub-915003100-PictureUsUserSetting1"
     }
     
     class func hashKeyAttribute() -> String {
-
+        
         return "_userId"
     }
     
-    override class func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject] {
+    override class func jsonKeyPathsByPropertyKey() -> [AnyHashable : Any] {
         return [
-               "_userId" : "userId",
-               "_circle" : "Circle",
-               "_doubleTap" : "DoubleTap",
-               "_down" : "Down",
-               "_downLeft" : "DownLeft",
-               "_downRight" : "DownRight",
-               "_iMessageContacts" : "IMessageContacts",
-               "_iMessageText" : "IMessageText",
-               "_left" : "Left",
-               "_right" : "Right",
-               "_tap" : "Tap",
-               "_up" : "Up",
-               "_upLeft" : "UpLeft",
-               "_upRight" : "UpRight",
+            "_userId" as NSObject : "userId" as AnyObject,
+            "_circle" as NSObject : "Circle" as AnyObject,
+            "_doubleTap" as NSObject : "DoubleTap" as AnyObject,
+            "_down" as NSObject : "Down" as AnyObject,
+            "_downLeft" as NSObject : "DownLeft" as AnyObject,
+            "_downRight" as NSObject : "DownRight" as AnyObject,
+            "_iMessageContacts" as NSObject : "IMessageContacts" as AnyObject,
+            "_iMessageText" as NSObject : "IMessageText" as AnyObject,
+            "_left" as NSObject : "Left" as AnyObject,
+            "_right" as NSObject : "Right" as AnyObject,
+            "_tap" as NSObject : "Tap" as AnyObject,
+            "_up" as NSObject : "Up" as AnyObject,
+            "_upLeft" as NSObject : "UpLeft" as AnyObject,
+            "_upRight" as NSObject : "UpRight" as AnyObject,
         ]
     }
+    
+    
 }
