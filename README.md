@@ -41,3 +41,4 @@ Photo sharing made easier.
 ##### 11/26/2016 - Integrated scroll view with AWS so users can dynamically fetch their social media platforms
 ##### 11/26/2016 - Integrate social media calls with dyanmoDB
 ##### 11/26/2016 - We have an end to end user experience with swiper, need testing and further feature implementation
+##### 11/27/2016 - User creation integrated for both facebook and google 
