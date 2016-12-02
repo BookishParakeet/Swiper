@@ -13,7 +13,7 @@ import AVFoundation
 import AWSDynamoDB
 import AWSMobileHubHelper
 
-
+//Need to change where the default keeps getting set...
 class CameraController:UIViewController, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var stillImageOutput : AVCaptureStillImageOutput?
     var captureSession : AVCaptureSession?
@@ -38,7 +38,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     @IBOutlet var downImage: UIImageView!
     //Global var to bypass the initial google signin
     var FINAL_USED_TO_SEED = false
-    var firstLogin = true
 
     let socialMediaTypes = [
         "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
@@ -104,11 +103,10 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     func handleShareMedia(direction:String!) {
-        if firstLogin == true {
-            shareDefault(direction: direction)
-            firstLogin = false;
-        } else {
+        if(AWSIdentityManager.defaultIdentityManager().isLoggedIn) {
             shareWithuser(direction: direction)
+        } else {
+            shareDefault(direction: direction)
         }
     }
     
