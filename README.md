@@ -56,3 +56,5 @@ Photo sharing made easier.
 ##### 11/26/2016 - Integrate social media calls with dyanmoDB
 ##### 11/26/2016 - We have an end to end user experience with swiper, need testing and further feature implementation
 ##### 11/27/2016 - User creation integrated for both facebook and google 
+##### 12/01/2016 - Fixed default settings issue, fixed user creation bug.
+##### 12/03/2016 - Updated settings page UI, updated camera icons
