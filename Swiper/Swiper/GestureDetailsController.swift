@@ -54,9 +54,7 @@ class GestureDetailsController: UITableViewController {
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
-                    print ("new table row")
                     let tableRow = task.result as! PictureUsUserSetting1
-                    print(tableRow)
                     if (tableRow._downLeft == nil) {
                         self.setDefaults()
                     } else {

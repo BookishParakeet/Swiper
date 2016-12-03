@@ -61,36 +61,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LeftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-hi-uI7">
-                                <rect key="frame" x="5" y="303" width="45" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="updated_left_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-hi-uI7">
+                                <rect key="frame" x="-7" y="303" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1f-dx-aeu">
-                                <rect key="frame" x="59" y="310" width="35" height="35"/>
+                                <rect key="frame" x="25" y="308" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="0It-8c-opy">
-                                <rect key="frame" x="325" y="303" width="45" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="updated_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="0It-8c-opy">
+                                <rect key="frame" x="338" y="303" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Po5-ix-HuX">
-                                <rect key="frame" x="285" y="309" width="35" height="35"/>
+                                <rect key="frame" x="315" y="308" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UpArrow" translatesAutoresizingMaskIntoConstraints="NO" id="0Ez-VW-5hx">
-                                <rect key="frame" x="167" y="65" width="45" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="updated_up_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="0Ez-VW-5hx">
+                                <rect key="frame" x="167" y="57" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BlI-BS-75r">
-                                <rect key="frame" x="170" y="112" width="35" height="35"/>
+                                <rect key="frame" x="170" y="93" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Down_Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Q9N-Pf-fMa">
-                                <rect key="frame" x="158" y="600" width="45" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="updated_down_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Q9N-Pf-fMa">
+                                <rect key="frame" x="167" y="615" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hJ-aZ-Rcc">
-                                <rect key="frame" x="165" y="565" width="35" height="35"/>
+                                <rect key="frame" x="170" y="592" width="35" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CYj-Xf-Pdf">
@@ -517,22 +517,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cs-gJ-g6o" userLabel="SignInFB">
-                                <rect key="frame" x="95" y="536" width="185" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="logoutFb"/>
-                                <connections>
-                                    <action selector="logout:" destination="bEg-7I-DBX" eventType="touchUpInside" id="5tW-fv-eVo"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SwiperIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QnE-no-mtn" userLabel="Avatar">
                                 <rect key="frame" x="137" y="113" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy7-vT-kXa" userLabel="SignInGoogle">
-                                <rect key="frame" x="140" y="474" width="95" height="45"/>
+                                <rect key="frame" x="137" y="424" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="logout"/>
+                                <state key="normal" title="Button" image="updated_logout"/>
                                 <connections>
                                     <action selector="logout:" destination="bEg-7I-DBX" eventType="touchUpInside" id="lSz-wQ-An1"/>
                                 </connections>
@@ -745,7 +737,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qr8-xv-dF8">
-                                <rect key="frame" x="0.0" y="496" width="375" height="129"/>
+                                <rect key="frame" x="0.0" y="512" width="375" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szW-Gd-rMZ">
@@ -841,16 +833,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Down_Arrow" width="289" height="261"/>
         <image name="DrawCircle" width="144" height="144"/>
         <image name="FBIcon" width="256" height="256"/>
         <image name="FlickrIcon" width="256" height="256"/>
         <image name="GIcon" width="256" height="256"/>
         <image name="GestureIcon" width="256" height="256"/>
         <image name="GuestIcon" width="128" height="128"/>
-        <image name="LeftArrow" width="261" height="289"/>
         <image name="LinkedInIcon" width="256" height="256"/>
-        <image name="RightArrow" width="261" height="289"/>
         <image name="SampleImage" width="1224" height="1632"/>
         <image name="SettingGear" width="22" height="22"/>
         <image name="SwipeDown" width="256" height="256"/>
@@ -862,12 +851,14 @@
         <image name="TipIcon" width="256" height="256"/>
         <image name="TumblrIcon" width="256" height="256"/>
         <image name="TwitterIcon" width="256" height="256"/>
-        <image name="UpArrow" width="289" height="261"/>
         <image name="WeiboIcon" width="256" height="256"/>
         <image name="iMessageIcon" width="113" height="113"/>
-        <image name="logout" width="315" height="147"/>
-        <image name="logoutFb" width="756" height="176"/>
         <image name="settings" width="210" height="210"/>
+        <image name="updated_down_arrow" width="128" height="128"/>
+        <image name="updated_left_arrow" width="128" height="128"/>
+        <image name="updated_logout" width="600" height="601"/>
+        <image name="updated_right_arrow" width="128" height="128"/>
+        <image name="updated_up_arrow" width="128" height="128"/>
         <image name="x_button" width="1597" height="1606"/>
     </resources>
     <inferredMetricsTieBreakers>
