@@ -17,12 +17,12 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     var thumbButt: UIButton?
     var passedDirection: String! = ""
     let socialMediaTypes = [
-        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
+        "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "deviantart": #imageLiteral(resourceName: "deviantart"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon")
     ]
-     var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon")]
+     var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon"),#imageLiteral(resourceName: "deviantart")]
     
      let buttonToSocialMedia = [
-        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo"]
+        0:"facebook", 1:"twitter", 2:"imessage", 3:"google+", 4:"flickr", 5:"linkedin", 6:"tumblr", 7:"weibo", 8:"deviantart"]
     
     @IBOutlet var currentMedia: UIImageView!
     override func viewDidLoad() {
@@ -38,12 +38,12 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
     }
     
     func buttonAction(_ sender: UIButton!) {
-        print ("sender tag")
-        var socialMedia = buttonToSocialMedia[sender.tag]
-        print (socialMedia)
+        let socialMedia = buttonToSocialMedia[sender.tag]
         currentMedia.image = socialMediaTypes[socialMedia!]
         updateNewSetting(newDirection: passedDirection, newMedia: socialMedia!)
-        
+        let alert = UIAlertController(title: "Swiper", message: "Updated social media " + socialMedia! + " for direction " + passedDirection, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func updateNewSetting(newDirection: String, newMedia: String) {
