@@ -19,6 +19,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     var captureSession : AVCaptureSession?
     var previewLayer : AVCaptureVideoPreviewLayer?
     var firstTime: Bool = true
+    var saveToGallery: Bool = true
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pictureImage: UIImageView!
     var phoneNumber: String!
@@ -308,8 +309,11 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     let dataProvider  = CGDataProvider(data: imageData as! CFData)
                     let cgImageRef = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent )
                     let image = UIImage(cgImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.right)
-                    
+                    if (self.saveToGallery == true) {
+                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                    }
                     self.pictureImage.image = image
+                    self.imagePickerButton.setImage(image, for: UIControlState.normal)
                     self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
                     self.view.bringSubview(toFront: self.swipeLeftImg)
                     self.view.bringSubview(toFront: self.swipeRightImg)
@@ -363,13 +367,17 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     
     
     @IBAction func pickImageFromLibrary(_ sender: AnyObject) {
-        //        imagePicker.allowsEditing = false
-        //        imagePicker.sourceType = .photoLibrary
-        //
-        //        present(imagePicker, animated: true, completion: nil)
-        let alert = UIAlertController(title: "Image Picker", message: "Image Picker feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                present(imagePicker, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "Image Picker", message: "Image Picker feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 
     func setMediaIcons() {
@@ -438,25 +446,26 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         })
     }
 
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        //        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-        //            pictureImage.contentMode = .scaleAspectFit
-        //            pictureImage.image = pickedImage
-        //            self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
-        //            self.view.bringSubview(toFront: self.swipeLeftImg)
-        //            self.view.bringSubview(toFront: self.swipeRightImg)
-        //            self.view.bringSubview(toFront: self.swipeUpImg)
-        //            self.view.bringSubview(toFront: self.swipeDownImg)
-        //            self.view.sendSubview(toBack: self.imagePickerButton)
-        //
-        //        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        captureSession?.stopRunning()
+        pictureImage.contentMode = .scaleAspectFill
+        pictureImage.image = chosenImage
+        self.view.bringSubview(toFront: self.pictureImage)
+        self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
+        self.view.bringSubview(toFront: self.swipeLeftImg)
+        self.view.bringSubview(toFront: self.swipeRightImg)
+        self.view.bringSubview(toFront: self.swipeUpImg)
+        self.view.bringSubview(toFront: self.swipeDownImg)
+        self.view.bringSubview(toFront: self.rightImage)
+        self.view.bringSubview(toFront: self.leftImage)
+        self.view.bringSubview(toFront: self.upImage)
+        self.view.bringSubview(toFront: self.downImage)
+        self.view.sendSubview(toBack: self.imagePickerButton)
+        didTakePhoto = true
+        dismiss(animated:true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

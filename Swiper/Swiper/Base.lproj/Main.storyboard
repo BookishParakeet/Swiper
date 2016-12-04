@@ -57,7 +57,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ4-JM-wfz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ4-JM-wfz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -157,7 +157,7 @@
         <!--Setting Details-->
         <scene sceneID="Wi3-D9-Ym2">
             <objects>
-                <tableViewController title="Setting Details" id="aKF-1j-1ag" customClass="SettingDetailsController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Setting Details" id="aKF-1j-1ag" customClass="SettingDetailController" customModule="Swiper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZWX-NJ-rNE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,6 +528,9 @@
                             <outlet property="delegate" destination="aKF-1j-1ag" id="haZ-sH-AfW"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="saveToGallery" destination="6LR-Kq-8jb" id="pCg-bT-cXJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3AJ-lh-M93" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -830,7 +833,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uty-h4-7za">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Uty-h4-7za">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -852,7 +855,7 @@
         <image name="GestureIcon" width="256" height="256"/>
         <image name="GuestIcon" width="128" height="128"/>
         <image name="LinkedInIcon" width="256" height="256"/>
-        <image name="SampleImage" width="1224" height="1632"/>
+        <image name="SampleImage" width="148" height="151"/>
         <image name="SettingGear" width="22" height="22"/>
         <image name="SwipeDown" width="256" height="256"/>
         <image name="SwipeLeft" width="256" height="256"/>
