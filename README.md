@@ -58,3 +58,4 @@ Photo sharing made easier.
 ##### 11/27/2016 - User creation integrated for both facebook and google 
 ##### 12/01/2016 - Fixed default settings issue, fixed user creation bug.
 ##### 12/03/2016 - Updated settings page UI, updated camera icons
+##### 12/03/2016 - Photos saved to iOS camera roll, user can pick local image to share
