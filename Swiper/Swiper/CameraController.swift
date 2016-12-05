@@ -371,9 +371,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
                 present(imagePicker, animated: true, completion: nil)
-//        let alert = UIAlertController(title: "Image Picker", message: "Image Picker feature coming soon!", preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -402,7 +399,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     func setDefaultImages() {
-        print ("setting defaults")
         upImage.image = socialMediaTypes["weibo"]
         downImage.image = socialMediaTypes["imessage"]
         leftImage.image = socialMediaTypes["facebook"]
@@ -410,7 +406,6 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     }
     
     func setImages (leftSetting: String, rightSetting: String, upSetting: String, downSetting: String) {
-        print ("setting from db")
         upImage.image = socialMediaTypes[upSetting]
         downImage.image = socialMediaTypes[downSetting]
         leftImage.image = socialMediaTypes[leftSetting]

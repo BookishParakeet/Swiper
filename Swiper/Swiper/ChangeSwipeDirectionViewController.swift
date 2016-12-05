@@ -52,7 +52,6 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
-                    print ("new table row")
                     let tableRow = task.result as! PictureUsUserSetting1
                     uset = tableRow
                     if newDirection == "up" {
@@ -71,10 +70,11 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
                         }
                         
                     })
-                    print ("saved")
                 }
             } else {
-                print ("Could not update")
+                let alert = UIAlertController(title: "Swiper", message: "Unable to update settings, please restart app and try again.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             return nil
         })
@@ -93,7 +93,6 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
         let numberOfButtons = socialMedia.count
         
         for index in 0...numberOfButtons - 1 {
-            print (index)
             let buttonTag = index
             let buttonImage:UIImage = socialMedia[index]
             let button = UIButton(type: UIButtonType.custom) as UIButton
@@ -101,23 +100,20 @@ class ChangeSwipeDirectionViewController: UIViewController, UIScrollViewDelegate
             button.frame = CGRect(origin: CGPoint(x: x,y :y), size: CGSize(width: buttonWidth, height: buttonHeight))
             button.setImage(buttonImage, for: .normal)
             button.showsTouchWhenHighlighted = true
-            
+
             button.addTarget(self, action: Selector("buttonAction:"), for: UIControlEvents.touchUpInside)
-            
             x +=  buttonWidth + buttonGap
             socialMediaScrollView.addSubview(button)
         }
         
         
         let buttonsCountFloat = CGFloat(Int(numberOfButtons))
-        var x_val = buttonWidth * CGFloat(buttonsCountFloat+4)
-        
+        let x_val = buttonWidth * CGFloat(buttonsCountFloat+4)
         socialMediaScrollView.contentSize = CGSize(width: x_val, height: y)
     }
     
     func setCurrentMedia(socialMedia:String) {
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.default()
-        
         dynamoDBObjectMapper .load(PictureUsUserSetting1.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: nil) .continue(with: AWSExecutor.mainThread(), with: { (task:AWSTask!) -> AnyObject! in
             if (task.error == nil) {
                 if (task.result != nil) {
