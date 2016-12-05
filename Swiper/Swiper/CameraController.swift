@@ -21,8 +21,9 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     var firstTime: Bool = true
     var saveToGallery: Bool = true
     var appliedFilter: Bool = false
-    var setSepia: Bool = false
     var setTempImage: Bool = false
+    var filterChoice: Int = 0
+    
     var tmpUIImage: UIImage!
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pictureImage: UIImageView!
@@ -47,6 +48,9 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
     let socialMediaTypes = [
         "facebook": #imageLiteral(resourceName: "FBIcon"), "twitter":#imageLiteral(resourceName: "TwitterIcon"), "imessage":#imageLiteral(resourceName: "iMessageIcon"), "weibo": #imageLiteral(resourceName: "WeiboIcon"), "google+":#imageLiteral(resourceName: "GIcon"), "flickr":#imageLiteral(resourceName: "FlickrIcon"), "tumblr":#imageLiteral(resourceName: "TumblrIcon"), "linkedin":#imageLiteral(resourceName: "LinkedInIcon"), "deviantart":#imageLiteral(resourceName: "deviantart")
     ]
+    let filterTypes = ["CIFalseColor", "CIPhotoEffectNoir", "CIPhotoEffectInstant", "CIPhotoEffectChrome", "CIPhotoEffectFade", "CIPhotoEffectMono", "CIVignette"]
+    let FINAL_FILTER_CHOICES = 7
+
     var socialMedia = [#imageLiteral(resourceName: "FBIcon"), #imageLiteral(resourceName: "TwitterIcon"), #imageLiteral(resourceName: "iMessageIcon"), #imageLiteral(resourceName: "GIcon"), #imageLiteral(resourceName: "FlickrIcon"), #imageLiteral(resourceName: "LinkedInIcon"), #imageLiteral(resourceName: "TumblrIcon"), #imageLiteral(resourceName: "WeiboIcon"), #imageLiteral(resourceName: "deviantart")]
     
     let buttonToSocialMedia = [
@@ -319,7 +323,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
                     }
                     self.pictureImage.image = image
                     self.appliedFilter = false
-                    self.setSepia = false;
+                    self.filterChoice = 0
                     self.setTempImage = false
                     self.imagePickerButton.setImage(image, for: UIControlState.normal)
                     self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
@@ -459,7 +463,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         pictureImage.contentMode = .scaleAspectFill
         pictureImage.image = chosenImage
         appliedFilter = false
-        setSepia = false
+        filterChoice = 0
         setTempImage = false
         self.view.bringSubview(toFront: self.pictureImage)
         self.view.bringSubview(toFront: self.takeAnotherPhotoButton)
@@ -482,41 +486,31 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
             tmpUIImage = self.pictureImage.image
             setTempImage = true
         }
-        if appliedFilter == false {
-            var filterName = "CIFalseColor"
+        if filterChoice < FINAL_FILTER_CHOICES {
+            let filterName = filterTypes[filterChoice]
+            filterChoice += 1
             guard let image = self.tmpUIImage.cgImage else {
                 let alert = UIAlertController(title: "Swiper", message: "Could not apply filter.", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
             }
-            
             let openGLContext = EAGLContext(api: .openGLES3)
             let context = CIContext(eaglContext: openGLContext!)
             let ciImage = CIImage(cgImage: image)
-            if setSepia == true {
-                filterName = "CIPhotoEffectNoir"
-                appliedFilter = true
-            } else {
-                setSepia = true
-                filterName = "CIFalseColor"
-            }
+            
             let filter = CIFilter(name: filterName) // CISepiaTone
             filter?.setValue(ciImage, forKey: kCIInputImageKey)
-            
             if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage {
                 self.pictureImage?.image = UIImage(cgImage: context.createCGImage(output, from: output.extent)!, scale: 1.0, orientation: UIImageOrientation.right)
-                
             }
         } else {
             self.pictureImage?.image = tmpUIImage
             appliedFilter = false
             setTempImage = false
-            setSepia = false
+            filterChoice = 0
         }
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
