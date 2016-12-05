@@ -352,7 +352,7 @@
 				TargetAttributes = {
 					2A5D52F61DD920C6002C0377 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = V36F8HDW4N;
+						DevelopmentTeam = WPS3Y6MWD7;
 						ProvisioningStyle = Automatic;
 					};
 					2A5D530A1DD920C6002C0377 = {
@@ -600,7 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V36F8HDW4N;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sdk/Aws",
@@ -622,7 +622,7 @@
 					"-force_load",
 					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Swiper.PictureUs;
+				PRODUCT_BUNDLE_IDENTIFIER = CharlieWang.PictureUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -632,7 +632,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V36F8HDW4N;
+				DEVELOPMENT_TEAM = WPS3Y6MWD7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sdk/Aws",
@@ -654,7 +654,7 @@
 					"-force_load",
 					"$(PROJECT_DIR)/Sdk/Facebook/FBSDKCoreKit.framework/FBSDKCoreKit",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Swiper.PictureUs;
+				PRODUCT_BUNDLE_IDENTIFIER = CharlieWang.PictureUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
