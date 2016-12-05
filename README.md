@@ -59,3 +59,5 @@ Photo sharing made easier.
 ##### 12/01/2016 - Fixed default settings issue, fixed user creation bug.
 ##### 12/03/2016 - Updated settings page UI, updated camera icons
 ##### 12/03/2016 - Photos saved to iOS camera roll, user can pick local image to share
+##### 12/04/2016 - Removed print statements and unecessary comments for clean up
+##### 12/04/2016 - Integration and behavioral tested end to end functionality 
