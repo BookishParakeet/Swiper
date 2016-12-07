@@ -305,6 +305,7 @@ class CameraController:UIViewController, MFMessageComposeViewControllerDelegate,
         }
     }
     
+    //Comment 
     func didPressTakePhoto(){
         if let videoConnection = stillImageOutput?.connection(withMediaType: AVMediaTypeVideo){
             videoConnection.videoOrientation = AVCaptureVideoOrientation.portrait
